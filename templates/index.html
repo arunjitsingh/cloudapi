@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CloudAPI Endpoints</title>
+  </head>
+  <body>
+    <script src="/js/main.js"></script>
+    <script>
+      var ROOT = 'https://arunjit-test.appspot.com/_ah/api';
+      function init() {
+        gapi.client.load('apitest', 'v1', function() {
+          main.init();
+        }, ROOT);
+      }
+    </script>
+    <script src="https://apis.google.com/js/client.js?onload=init"></script>
+  </body>
+</html>
