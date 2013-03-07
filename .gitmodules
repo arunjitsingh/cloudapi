@@ -1,0 +1,9 @@
+[submodule "lib/ajpy/util"]
+	path = lib/ajpy/util
+	url = /Users/arunjitsingh/Developer/gitsrcs/ajpy/util.git
+[submodule "lib/ajpy/appengine"]
+	path = lib/ajpy/appengine
+	url = /Users/arunjitsingh/Developer/gitsrcs/ajpy/appengine.git
+[submodule "lib/ajpy/security"]
+	path = lib/ajpy/security
+	url = /Users/arunjitsingh/Developer/gitsrcs/ajpy/security.git
