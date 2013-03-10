@@ -6,12 +6,20 @@
  * @author Arunjit Singh <arunjit@me.com>
  */
 
-main = this.main || {};
+var main = angular.module('main', []);
 
-main.init = function() {
-  gapi.client.apitest.email.stringify({
+main.constant('API_ROOT', 'https://arunjit-test.appspot.com/_ah/api');
+
+main.factory('gapiclient', function() {
+  return {
+    apitest: gapi.client.apitest
+  }
+});
+
+var app = angular.module('app', ['gapiclient'], function(gapiclient) {
+  gapiclient.apitest.email.stringify({
     'name': 'Arunjit Singh',
     'email': 'arunjit@me.com'}).execute(function(response) {
       console.log(response, response['email_string']);
     });
-};
+});

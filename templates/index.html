@@ -1,18 +1,22 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>CloudAPI Endpoints</title>
-  </head>
-  <body>
-    <script src="/js/main.js"></script>
-    <script>
-      var ROOT = 'https://arunjit-test.appspot.com/_ah/api';
-      function init() {
-        gapi.client.load('apitest', 'v1', function() {
-          main.init();
-        }, ROOT);
-      }
-    </script>
-    <script src="https://apis.google.com/js/client.js?onload=init"></script>
-  </body>
-</html>
+{% extends "_base.html" %}
+
+{% block title %}CloudAPI - App Engine Endpoints{% endblock %}
+{% block description %}App Engine Cloud Endpoints + AngularJS{% endblock %}
+
+{% block body_scripts %}
+  <script>
+function init() {
+  gapi.client.load('apitest', 'v1', function() {
+    $script('/js/components/angular/angular.min.js', function() {
+      $script('/js/main.js', function() {
+        angular.element(document).ready(function() {
+          angular.bootstrap(document, ['main', 'app']);
+        });
+      });
+    });
+  }, 'https://arunjit-test.appspot.com/_ah/api');
+}
+  </script>
+  <script src="https://apis.google.com/js/client.js?onload=init"></script>
+
+{% endblock %}
