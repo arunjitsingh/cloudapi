@@ -15,11 +15,3 @@ main.factory('gapiclient', function() {
     apitest: gapi.client.apitest
   }
 });
-
-var app = angular.module('app', ['gapiclient'], function(gapiclient) {
-  gapiclient.apitest.email.stringify({
-    'name': 'Arunjit Singh',
-    'email': 'arunjit@me.com'}).execute(function(response) {
-      console.log(response, response['email_string']);
-    });
-});

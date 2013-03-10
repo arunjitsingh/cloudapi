@@ -9,9 +9,12 @@ function init() {
   gapi.client.load('apitest', 'v1', function() {
     $script('/js/components/angular/angular.min.js', function() {
       $script('/js/main.js', function() {
-        angular.element(document).ready(function() {
-          angular.bootstrap(document, ['main', 'app']);
-        });
+        // angular.bootstrap(document, ['main']);
+        angular.injector(['main']).get('gapiclient').apitest.email.stringify({
+          'name': 'Arunjit Singh',
+          'email': 'arunjit@me.com'}).execute(function(response) {
+            console.log(response, response['email_string']);
+          });
       });
     });
   }, 'https://arunjit-test.appspot.com/_ah/api');
