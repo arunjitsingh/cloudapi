@@ -11,7 +11,9 @@
   <script src="/js/main.js"></script>
   <script>
     function init() {
+      console.log('init(): gapi.load');
       gapi.client.load('apitest', 'v1', function() {
+        console.log('bootstrapping angular now');
         angular.bootstrap(document, ['main']);
       }, '/_ah/api');
     }

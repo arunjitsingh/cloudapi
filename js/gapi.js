@@ -9,9 +9,10 @@
 'use strict';
 
 angular.module('gapi', []).
-    factory('gapiclient', function() {
-      if (!gapi || !gapi.client) return {};
-      return {
-        apitest: gapi.client.apitest
-      };
+    provider('gapiclient', function() {
+      this.$get = function() {
+        console.log('gapiclient.$get: gapi.client');
+        if (!window.gapi) return {};
+        return gapi.client;
+      }
     });
