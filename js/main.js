@@ -6,12 +6,10 @@
  * @author Arunjit Singh <arunjit@me.com>
  */
 
-var main = angular.module('main', []);
+'use strict';
 
-main.constant('API_ROOT', 'https://arunjit-test.appspot.com/_ah/api');
-
-main.factory('gapiclient', function() {
-  return {
-    apitest: gapi.client.apitest
-  }
-});
+angular.module('main', ['controllers']).
+    config(['$interpolateProvider', function($interpolateProvider) {
+      $interpolateProvider.startSymbol('[[');
+      $interpolateProvider.endSymbol(']]');
+    }]);

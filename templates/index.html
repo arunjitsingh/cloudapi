@@ -3,23 +3,31 @@
 {% block title %}CloudAPI - App Engine Endpoints{% endblock %}
 {% block description %}App Engine Cloud Endpoints + AngularJS{% endblock %}
 
-{% block body_scripts %}
+{% block more_head_scripts %}
+  <script src="/js/components/angular/angular.min.js"></script>
   <script>
-function init() {
-  gapi.client.load('apitest', 'v1', function() {
-    $script('/js/components/angular/angular.min.js', function() {
-      $script('/js/main.js', function() {
-        // angular.bootstrap(document, ['main']);
-        angular.injector(['main']).get('gapiclient').apitest.email.stringify({
-          'name': 'Arunjit Singh',
-          'email': 'arunjit@me.com'}).execute(function(response) {
-            console.log(response, response['email_string']);
-          });
-      });
-    });
-  }, 'https://arunjit-test.appspot.com/_ah/api');
-}
+    function init() {
+      gapi.client.load('apitest', 'v1', function() {
+        $script([
+            '/js/gapi.js',
+            '/js/controllers.js',
+            '/js/main.js'
+          ], function() {
+          angular.bootstrap(document, ['main']);
+        });
+      }, '/_ah/api');
+    }
   </script>
   <script src="https://apis.google.com/js/client.js?onload=init"></script>
+{% endblock %}
 
+{% block body %}
+  <section id="main">
+    <section id="stringer" ng-controller="StringerCtrl">
+      <label>Name:</label><input type="text" ng-model="name"><br>
+      <label>Email:</label><input type="email" ng-model="email" required><br>
+      <button ng-click="stringify()">Stringify!</button><br>
+      <span class="response" ng-bind-template="[[stringified]]"></span>
+    </section>
+  </section>
 {% endblock %}
