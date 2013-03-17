@@ -10,7 +10,7 @@
 
 (function() {
 
-function StringerCtrl($scope, $log, $rootScope, gapiclient) {
+function StringerCtrl($scope, $log, gapiclient) {
   $scope.name = 'asdf';
   $scope.email = 'asdf@asdf.net';
   $scope.stringified = '';
@@ -20,7 +20,7 @@ function StringerCtrl($scope, $log, $rootScope, gapiclient) {
       'email': $scope.email
     }).execute(function(response) {
       $log.info(response);
-      $rootScope.$apply(function() {
+      $scope.$apply(function() {
         $scope.stringified = response['email_string'];
       });
     });
@@ -28,9 +28,7 @@ function StringerCtrl($scope, $log, $rootScope, gapiclient) {
 }
 
 angular.module('controllers', ['gapi']).
-    controller(
-        'StringerCtrl',
-        ['$scope', '$log', '$rootScope', 'gapiclient', StringerCtrl]);
+    controller('StringerCtrl', ['$scope', '$log', 'gapiclient', StringerCtrl]);
 
 })();
 
