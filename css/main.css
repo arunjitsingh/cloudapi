@@ -1,0 +1,120 @@
+/* line 17, /Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+/* line 22, /Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+html {
+  line-height: 1;
+}
+
+/* line 24, /Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 26, /Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 28, /Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+/* line 30, /Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+q, blockquote {
+  quotes: none;
+}
+/* line 103, /Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+/* line 32, /Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+a img {
+  border: none;
+}
+
+/* line 116, /Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
+  display: block;
+}
+
+/* line 3, /Users/arunjitsingh/Developer/src/apps/cloudapi/sass/_base.scss */
+body {
+  font: 13px/17px "Open Sans", arial, sans-serif;
+}
+
+/* line 9, /Users/arunjitsingh/Developer/src/apps/cloudapi/sass/_base.scss */
+input[type="text"],
+input[type="email"],
+.aj-button {
+  height: 27px;
+  line-height: 27px;
+  border: 1px solid transparent;
+  display: inline-block;
+}
+
+/* line 17, /Users/arunjitsingh/Developer/src/apps/cloudapi/sass/_base.scss */
+input[type="text"],
+input[type="email"] {
+  border: 1px solid #e5e5e5;
+  border-top: 1px solid #d5d5d5;
+  min-width: 160px;
+}
+
+/* line 23, /Users/arunjitsingh/Developer/src/apps/cloudapi/sass/_base.scss */
+.aj-button {
+  background-color: #f1f1f1;
+  font-size: 11px;
+  font-weight: bold;
+  cursor: pointer;
+  text-transform: uppercase;
+  text-align: center;
+  vertical-align: middle;
+  padding: 0 24px;
+}
+
+/* line 3, ../sass/main.scss */
+.row {
+  margin: 5px 0;
+}
+
+/* line 7, ../sass/main.scss */
+label {
+  width: 90px;
+  display: inline-block;
+  text-align: right;
+  padding-right: 10px;
+}
+
+/* line 14, ../sass/main.scss */
+.response {
+  font-family: monospace;
+  background-color: #d5d5d5;
+  margin: 5px;
+  padding: 5px;
+}

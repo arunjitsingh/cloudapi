@@ -1,0 +1,32 @@
+@import "compass/reset";
+
+body {
+  font: 13px/17px "Open Sans", arial, sans-serif;
+}
+
+input[type="text"],
+input[type="email"],
+.aj-button {
+  height: 27px;
+  line-height: 27px;
+  border: 1px solid transparent;
+  display: inline-block;
+}
+
+input[type="text"],
+input[type="email"] {
+  border: 1px solid #e5e5e5;
+  border-top: 1px solid #d5d5d5;
+  min-width: 160px;
+}
+
+.aj-button {
+  background-color: #f1f1f1;
+  font-size: 11px;
+  font-weight: bold;
+  cursor: pointer;
+  text-transform: uppercase;
+  text-align: center;
+  vertical-align: middle;
+  padding: 0 24px;
+}

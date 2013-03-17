@@ -4,17 +4,15 @@
 {% block description %}App Engine Cloud Endpoints + AngularJS{% endblock %}
 
 {% block more_head_scripts %}
+  <link rel="stylesheet" type="text/css" href="/css/main.css">
   <script src="/js/components/angular/angular.min.js"></script>
+  <script src="/js/gapi.js"></script>
+  <script src="/js/controllers.js"></script>
+  <script src="/js/main.js"></script>
   <script>
     function init() {
       gapi.client.load('apitest', 'v1', function() {
-        $script([
-            '/js/gapi.js',
-            '/js/controllers.js',
-            '/js/main.js'
-          ], function() {
-          angular.bootstrap(document, ['main']);
-        });
+        angular.bootstrap(document, ['main']);
       }, '/_ah/api');
     }
   </script>
@@ -24,10 +22,10 @@
 {% block body %}
   <section id="main">
     <section id="stringer" ng-controller="StringerCtrl">
-      <label>Name:</label><input type="text" ng-model="name"><br>
-      <label>Email:</label><input type="email" ng-model="email" required><br>
-      <button ng-click="stringify()">Stringify!</button><br>
-      <span class="response" ng-bind-template="[[stringified]]"></span>
+      <div class="row"><label>Name:</label><input type="text" ng-model="name"></div>
+      <div class="row"><label>Email:</label><input type="email" ng-model="email" required></div>
+      <div class="row"><label></label><div role="button" class="aj-button" ng-click="stringify()">Stringify!</div></div>
+      <div class="row"><span class="response" ng-show="!!stringified" ng-bind-template="[[stringified]]"></span></div>
     </section>
   </section>
 {% endblock %}
