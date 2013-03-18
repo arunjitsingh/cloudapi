@@ -6,7 +6,7 @@ files = [
   'components/angular/angular.js',
   'components/angular-mocks/angular-mocks.js',
   'app/**/*.js',
-  '_tests/**/*.js'
+  '+tests/**/*.js'
 ];
 
 autoWatch = true;
@@ -14,6 +14,6 @@ autoWatch = true;
 browsers = ['Chrome'];
 
 junitReporter = {
-  outputFile: '_test_out/unit.xml',
+  outputFile: '+test_out/unit.xml',
   suite: 'unit'
 };

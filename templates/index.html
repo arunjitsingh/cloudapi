@@ -29,7 +29,7 @@
     <section id="stringer" ng-controller="StringerCtrl">
       <div class="row"><label>Name:</label><input type="text" ng-model="name"></div>
       <div class="row"><label>Email:</label><input type="email" ng-model="email" required></div>
-      <div class="row"><label></label><div role="button" class="aj-button" ng-click="stringify()">Stringify!</div></div>
+      <div class="row"><label></label><div role="button" class="aj-button" ng-click="stringify(name, email)">Stringify!</div></div>
       <div class="row"><span class="response" ng-show="!!stringified" ng-bind="stringified"></span></div>
     </section>
   </section>

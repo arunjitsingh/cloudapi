@@ -14,10 +14,10 @@ function StringerCtrl($scope, $log, gapiclient) {
   $scope.name = 'asdf';
   $scope.email = 'asdf@asdf.net';
   $scope.stringified = '';
-  $scope.stringify = function() {
+  $scope.stringify = function(name, email) {
     gapiclient.apitest.email.stringify({
-      'name': $scope.name,
-      'email': $scope.email
+      'name': name,
+      'email': email
     }).execute(function(response) {
       $log.info(response);
       $scope.$apply(function() {
